@@ -1,0 +1,7 @@
+// In calendar-view.component.html
+<div cdkDropList (cdkDropListDropped)="onMove($event)">
+  <div *ngFor="let appointment of appointments$ | async" cdkDrag>
+    {{ appointment.title }} - {{ appointment.date }} - {{ appointment.time }}
+    <button (click)="onDelete(appointment.id)">Delete</button>
+  </div>
+</div>
